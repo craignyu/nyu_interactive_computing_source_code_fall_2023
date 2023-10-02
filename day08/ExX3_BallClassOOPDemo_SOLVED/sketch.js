@@ -1,7 +1,7 @@
 // create three variables to hold our "Ball" objects
-let myBall;
-let fred;
-let george;
+let ada;
+let grace;
+let alan;
 
 function setup() {
   createCanvas(500,500);
@@ -9,24 +9,23 @@ function setup() {
   // call the Ball constructor function along with the "new" keyword
   // this causes JavaScript to call the constructor function and return
   // a copy of the function that can be stored in the variable myBall
-  myBall = new Ball(250, 250);
-  fred = new Ball(100, 100);
-  george = new Ball(300, 300);
+  ada = new Ball(250, 250);
+  grace = new Ball(100, 100);
+  alan = new Ball(300, 300);
 }
 
 function draw() {
   background(255);
 
   // ask each ball to move and display itself
-  myBall.move();
-  myBall.display();
+  ada.move();
+  ada.display();
 
-  fred.move();
-  fred.display();
+  grace.move();
+  grace.display();
 
-  george.move();
-  george.display();
-
+  alan.move();
+  alan.display();
 }
 
 // Our Ball 'class' - this is a 'blueprint' of how we should organize a new
