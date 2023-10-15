@@ -45,14 +45,15 @@ class Worm {
 
   moveAndDisplay() {
 
-    // adjust our color based on where the mouse is
+    // adjust our size based on where the mouse is
     let d = dist(mouseX, mouseY, this.x, this.y);
     this.size = map(d, 0, 250, 5, 3);
 
-    // worms near the mouse should light up with
+    // worms near the mouse should switch to using RGB color
     if (d < 100) {
       fill(random(128,255), random(128,255), random(128,255));
     }
+    // otherwise use our default greyscale color
     else {
       fill(this.color);
     }
