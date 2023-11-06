@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- A-Frame core library -->
+		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+		<script>
+
+			// register a component that can be bound to an A-Frame entity
+			// we can apply an attribute of 'spinner' to any entity in our world
+			// and it will use this component to modulate its behavior
+			AFRAME.registerComponent('spinner', {
+
+				// this is like the 'constructor' for the component and will run every
+				// every time the component is attached to an entity
+				init: function() {
+					console.log("Spinner component has been used!");
+
+					// the 'this' keyword is bound to this object we are building - the
+					// object also has access to the HTML element that it is attached to
+					console.dir(this.el);
+				},
+
+				// there are event properties we can set up that will run by A-Frame
+				// one of these useful properties is the 'tick' property which can be
+				// thought of as a 'draw' function for the entity
+				tick: function() {
+					// all of the entity's properties are exposed via the 'components' object
+					//console.log(this.el.components.rotation);
+
+					// we can set / access values on this object
+					this.el.components.rotation.data.y += 0.01;
+
+					// we can also dig down into the THREE.js object that renders the entity
+					// and update its values
+					this.el.object3D.rotation.set(
+						this.el.components.rotation.data.x,
+						this.el.components.rotation.data.y,
+						this.el.components.rotation.data.z
+					);
+				}
+
+			});
+
+
+		</script>
+
+	</head>
+	<body>
+
+		<!-- container to hold our VR scene - make sure to give this element an ID of 'VRScene' -->
+        <a-scene id="VRScene">
+
+            <!--
+                The 'a-assets' container is used to load in any external artwork you may want to use as "textures" for your objects.
+                Ensure that this element has an ID of 'VRAssets'
+
+                Textures can be loaded by creating a new 'img' tag inside of the 'a-assets' container.
+                When doing this you will need to make sure to give your textures a unique ID -
+                this will be used by p5 to create new objects.
+
+                Example:
+
+                <img id="ITEM_ID_GOES_HERE" src="images/gold_block.png">
+            -->
+
+            <a-assets id="VRAssets">
+                <img id="stonebrick" src="../images/stonebrick.png">
+            </a-assets>
+
+
+            <!-- the a-entity tag lets you define a 3D entity
+                entities have the following attributes (and many more!):
+
+                geometry: the geometric properties that describe the object (box, plane, sphere, etc) along with width, height, depth information
+                material: the "skin" of the object - color, image texture, etc
+                position: where the entity is oriented in the 3D world (x, y and z position)
+                rotation: how the object is rotated (xRotation, yRotation, zRotation)
+            -->
+
+            <!-- a big plane that will serve as a "floor" for our world -->
+            <a-entity geometry="primitive: plane; width: 100; height: 100;" material="src: #stonebrick; repeat: 100 100" position="0 0 0" rotation="-90 0 0"></a-entity>
+
+            <!-- some cubes in front of the user
+                we will apply the 'spinner' component to these entities so that they
+                use the custom component we wrote above -->
+            <a-entity geometry="primitive: box; width:1; height: 1; depth: 1" material="color: rgb(255,255,0)" position="0 0.5 -5" rotation="0 0 0" spinner></a-entity>
+
+            <a-entity geometry="primitive: box; width:1; height: 1; depth: 1" material="color: rgb(0,255,255)" position="0 1.5 -5" rotation="0 20 0" spinner></a-entity>
+            <a-entity geometry="primitive: box; width:1; height: 1; depth: 1" material="color: rgb(255,0,255)" position="0 2.5 -5" rotation="0 40 0" spinner></a-entity>
+
+            <!-- a sphere floating off in the distance -->
+            <a-entity geometry="primitive: sphere; radius: 3" material="color: rgb(0,0,255); metalness: 0.5" position="-3 5 -8"></a-entity>
+
+            <!-- a sky element that simulates a huge sphere that forms the background to our world -->
+            <a-sky color="rgb(135,206,235);"></a-sky>
+
+        </a-scene>
+
+	</body>
+</html>
