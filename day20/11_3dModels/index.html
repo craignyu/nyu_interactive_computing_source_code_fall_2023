@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+		<!-- A-Frame core library -->
+		<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+		<!-- AFrameP5 library -->
+		<script src="https://craignyu.github.io/aframep5/libraries/aframep5-v2.1.js"></script>
+
+		<!-- Your p5 Sketch -->
+		<script src="sketch.js"></script>
+        
+	</head>
+	<body>
+
+		<!-- container to hold our VR scene - make sure to give this element an ID of 'VRScene' -->
+	    <a-scene id="VRScene">
+
+	    	<!--
+		       The 'a-assets' container is used to load in any external artwork you may want to use as "textures" for your objects. Ensure that this element has an ID of 'VRAssets'
+
+		       Textures can be loaded by creating a new 'a-asset-item' tag inside of the 'a-assets' container.
+		       When doing this you will need to make sure to give your textures a unique ID -
+		       this will be used by p5 to create new objects.
+
+		       Example:
+
+		       <img id="ITEM_ID_GOES_HERE" src="images/gold_block.png">
+				-->
+
+				<a-assets id="VRAssets">
+
+					<img id="stone" src="images/stonebrick_mossy.png">
+
+					<!-- in A-Frame we can support two different types of 3D models - OBJ and GLTF -->
+
+					<!-- these two files point to an OBJ model -->
+					<a-asset-item id="robot_obj" src="images/robot/model.obj"></a-asset-item>
+					<a-asset-item id="robot_mtl" src="images/robot/materials.mtl"></a-asset-item>
+
+					<!-- this single file points to a GLTF model -->
+					<!-- "Shiba" (https://skfb.ly/6WxVW) by zixisun02 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). -->
+					<a-asset-item id="dog" src="images/shiba/scene.gltf"></a-asset-item>
+
+				</a-assets>
+
+	    </a-scene>
+
+	</body>
+</html>
