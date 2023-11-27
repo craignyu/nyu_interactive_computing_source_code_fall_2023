@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>01_collect_the_gems_world</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script src="01_collect_the_gems_world.js"></script>
+
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            #leaderboard {
+                display: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>01_collect_the_gems_world</h1>
+        <div id="controls">
+            <div>
+                Avatar color: <input type="color" id="color_picker">
+            </div>
+            <div>
+                Avatar name (keep it clean!): <input type="text" id="username">
+                <button id="button_enter_world" onclick="enterWorld();">Enter World</button>
+            </div>
+        </div>
+        <div id="canvas_container"></div>
+        <div id="leaderboard">
+            <h2>Your Score: <span id="your_score"></span></h2>
+            <h2>Top 5 Players:</h2>
+            <div id="top_players"></div>
+        </div>
+        <div id="credits">
+            <p>Artwork credits:</p>
+            <p>Gems: https://opengameart.org/content/gems-tileset</p>
+        </div>
+    </body>
+</html>

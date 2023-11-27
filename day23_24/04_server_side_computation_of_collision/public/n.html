@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>01_collect_the_gems_world</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script>
+// graphics for our world
+let worldMap, tiles;
+
+function preload() {
+    worldMap = loadImage('images/map.png');
+    tiles = loadImage('images/tiles.png');
+}
+
+function setup() {
+    pixelDensity(1);
+    canvas = createCanvas(worldMap.width, worldMap.height);
+    //image(worldMap, 0, 0);
+
+    noiseDetail(24);
+
+    for (let y = 0; y < worldMap.height; y += 32) {
+        for (let x = 0; x < worldMap.width; x += 32) {
+            let n = noise(x/100, y/100);
+            if (x >= width/2-32*6 && x <= width/2+32*6 && y >= height/2-32*6 && y <= height/2+32*6) {
+                continue;
+            }
+            if (n > 0.5) {
+                console.log(n);
+                let pTiles = [8,9,11,12];
+                let id = int(map(n, 0.5, 1, 0, pTiles.length));
+                image(tiles, x, y, 32, 32, pTiles[id]*32, 0, 32, 32);
+            }
+            
+        }
+    }
+
+}
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

@@ -17,7 +17,7 @@ function setup() {
 	world.setBackground(0, 0, 0);
 
 	// create a plane to serve as our "ground"
-	var g = new Plane({
+	let g = new Plane({
 						x:0, y:0, z:0,
 						width:100, height:100,
 						asset: 'stone',
@@ -33,14 +33,14 @@ function setup() {
 function draw() {
 
 	// always create a new particle
-	var temp = new Particle(0, 0, -5);
+	let temp = new Particle(0, 0, -5);
 
 	// add to array
 	particles.push( temp );
 
 	// draw all particles
-	for (var i = 0; i < particles.length; i++) {
-		var result = particles[i].move();
+	for (let i = 0; i < particles.length; i++) {
+		let result = particles[i].move();
 		if (result == "gone") {
 			particles.splice(i, 1);
 			i-=1;
@@ -73,11 +73,11 @@ class Particle {
 	move() {
 		// compute how the particle should move
 		// the particle should always move up by a small amount
-		var yMovement = 0.01;
+		let yMovement = 0.01;
 
 		// the particle should randomly move in the x & z directions
-		var xMovement = map( noise(this.xOffset), 0, 1, -0.05, 0.05);
-		var zMovement = map( noise(this.zOffset), 0, 1, -0.05, 0.05);
+		let xMovement = map( noise(this.xOffset), 0, 1, -0.05, 0.05);
+		let zMovement = map( noise(this.zOffset), 0, 1, -0.05, 0.05);
 
 		// update our poistions in perlin noise space
 		this.xOffset += 0.01;
@@ -87,7 +87,7 @@ class Particle {
 		this.myBox.nudge(xMovement, yMovement, zMovement);
 
 		// make the boxes shrink a little bit
-		var boxScale = this.myBox.getScale();
+		let boxScale = this.myBox.getScale();
 		this.myBox.setScale( boxScale.x-0.005, boxScale.y-0.005, boxScale.z-0.005);
 
 		// if we get too small we need to indicate that this box is now no longer viable

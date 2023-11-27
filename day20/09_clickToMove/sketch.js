@@ -13,22 +13,22 @@ function setup() {
 	world.setBackground(0,0,0);
 
 	// what textures can we choose from?
-	var textures = ['iron', 'gold', 'stone'];
+	let textures = ['iron', 'gold', 'stone'];
 
 	// create lots of boxes
-	for (var i = 0; i < 150; i++) {
+	for (let i = 0; i < 150; i++) {
 		// pick a location
-		var x = random(-50, 50);
-		var z = random(-50, 50);
+		let x = random(-50, 50);
+		let z = random(-50, 50);
 
 		// pick a random texture
-		var t = textures[ int(random(textures.length)) ];
+		let t = textures[ int(random(textures.length)) ];
 
 		// create a box here
 		// note the inclusion of a 'clickFunction' property - this function will be invoked
 		// every time this box is clicked on.  note that the function accepts a single argument
 		// -- this is a reference to the box that was clicked (essentially the entity itself)
-		var b = new Box({
+		let b = new Box({
 							x:x,
 							y:0.5,
 							z:z,
@@ -56,17 +56,17 @@ function setup() {
 
 
 	// create a bunch of boxes in the sky as well
-	for (var i = 0; i < 150; i++) {
+	for (let i = 0; i < 150; i++) {
 		// pick a location
-		var x = random(-50, 50);
-		var y = 10;
-		var z = random(-50, 50);
+		let x = random(-50, 50);
+		let y = 10;
+		let z = random(-50, 50);
 
 		// create a box here
 		// note the inclusion of a 'clickFunction' property - this function will be invoked
 		// every time this box is clicked on.  note that the function accepts a single argument
 		// -- this is a reference to the box that was clicked (essentially the entity itself)
-		var s = new Box({
+		let s = new Box({
 							x:x,
 							y:y,
 							z:z,
@@ -87,7 +87,7 @@ function setup() {
 
 
 	// create a plane to serve as our "ground"
-	var g = new Plane({
+	let g = new Plane({
 						x:0, y:0, z:0,
 						width:100, height:100,
 						asset: 'stone',

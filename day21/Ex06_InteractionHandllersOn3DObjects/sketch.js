@@ -31,7 +31,7 @@ function setup() {
       clickFunction: function(e) {
 		  // when this plane is touched this function will run
 		  // note that in AR the precision of the mouse / touch detection isn't the greatest
-		  // and the A-Frame P% AR library can only support clickFucntions in AR at the moment
+		  // and the A-Frame P5 AR library can only support click functions in AR at the moment
 		  // (support for other events may be added in the future)
 	      e.setRed( random(255) );
 	      e.setGreen( random(255) );

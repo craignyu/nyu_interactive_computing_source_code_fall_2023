@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>01_user_controlled_characters_simple</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script src="01_user_controlled_characters_simple.js"></script>
+
+    </head>
+    <body>
+        <h1>01_user_controlled_characters_simple</h1>
+        <div id="controls">
+            <div>
+                Avatar color: <input type="color" id="color_picker">
+            </div>
+            <div>
+                Avatar name (keep it clean!): <input type="text" id="username">
+                <button id="button_enter_world" onclick="enterWorld();">Enter World</button>
+            </div>                        
+        </div>
+    </body>
+</html>

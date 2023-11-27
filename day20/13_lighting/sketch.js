@@ -20,7 +20,7 @@ function setup() {
 	world.setBackground(0, 0, 0);
 
 	// box primitive
-	var b = new Box({
+	let b = new Box({
 						x:-10, y:1, z:0,
 						width:1, height: 1.2, depth: 2,
 						red:random(255), green:random(255), blue:random(255)
@@ -28,7 +28,7 @@ function setup() {
 	world.add(b);
 
 	// sphere primitive
-	var s = new Sphere({
+	let s = new Sphere({
 						x:-8, y:5, z:0,
 						radius: 1.5,
 						red:random(255), green:random(255), blue:random(255),
@@ -41,7 +41,7 @@ function setup() {
 	world.add(s);
 
 	// plane primitive
-	var p = new Plane({
+	let p = new Plane({
 						x: -6, y:2, z:0,
 						width: 2, height:2,
 						red:random(255), green:random(255), blue:random(255),
@@ -50,7 +50,7 @@ function setup() {
 	world.add(p);
 
 	// dodecahedron primitive
-	var d = new Dodecahedron({
+	let d = new Dodecahedron({
 						x: -4, y:1, z:0,
 						radius: 0.5,
 						red:random(255), green:random(255), blue:random(255),
@@ -58,7 +58,7 @@ function setup() {
 	world.add(d);
 
 	// Octahedron primitive
-	var o = new Octahedron({
+	let o = new Octahedron({
 						x: -2, y:2, z:0,
 						radius: 0.7,
 						red:random(255), green:random(255), blue:random(255),
@@ -66,7 +66,7 @@ function setup() {
 	world.add(o);
 
 	// Tetrahedron primitive
-	var t = new Tetrahedron({
+	let t = new Tetrahedron({
 						x: 0, y:1, z:0,
 						radius: 0.6,
 						red:random(255), green:random(255), blue:random(255),
@@ -74,7 +74,7 @@ function setup() {
 	world.add(t);
 
 	// circle primitive
-	var c = new Circle({
+	let c = new Circle({
 						x: 2, y:2, z:0,
 						radius: 1,
 						red:random(255), green:random(255), blue:random(255),
@@ -83,7 +83,7 @@ function setup() {
 	world.add(c);
 
 	// cone primitive
-	var co = new Cone({
+	let co = new Cone({
 						x: 4 , y:1, z:0,
 						height:1.5,
 						radiusBottom: 1, radiusTop: 0.25,
@@ -92,7 +92,7 @@ function setup() {
 	world.add(co);
 
 	// cylinder primitive
-	var cl = new Cylinder({
+	let cl = new Cylinder({
 						x: 6 , y:2, z:0,
 						height:1.5,
 						radius: 0.25,
@@ -101,7 +101,7 @@ function setup() {
 	world.add(cl);
 
 	// ring primitive
-	var r = new Ring({
+	let r = new Ring({
 						x: 8 , y:1, z:0,
 						radiusInner:0.5,
 						radiusOuter: 1,
@@ -111,7 +111,7 @@ function setup() {
 	world.add(r);
 
 	// torus primitive
-	var to = new Torus({
+	let to = new Torus({
 						x: 10 , y:2, z:0,
 						radius:0.5,
 						radiusTubular: 0.05,
@@ -120,7 +120,7 @@ function setup() {
 	world.add(to);
 
 	// torusKnot primitive
-	var tok = new TorusKnot({
+	let tok = new TorusKnot({
 						x: 12 , y:1, z:0,
 						radius:0.5,
 						radiusTubular: 0.05,
@@ -131,7 +131,7 @@ function setup() {
 
 
 	// create a plane to serve as our "ground"
-	var g = new Plane({x:0, y:0, z:0, width:100, height:100, red:255, green:102, blue:153, rotationX:-90});
+	let g = new Plane({x:0, y:0, z:0, width:100, height:100, red:255, green:102, blue:153, rotationX:-90});
 
 	// add the plane to our world
 	world.add(g);
