@@ -40,4 +40,3 @@ server.listen(port, () => {
 
 
 // your custom code for faciltating communication with clients can be written below
-new_player
