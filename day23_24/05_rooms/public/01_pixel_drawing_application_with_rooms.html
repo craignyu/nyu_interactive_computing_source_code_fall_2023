@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>02_click_to_draw_rectangle_with_memory</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script src="01_pixel_drawing_application_with_rooms.js"></script>
+
+        <style>
+            .active {
+                background-color: yellow;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>01_pixel_drawing_application_with_rooms</h1>
+        <div>
+            Select a room: 
+            <button id="room1" class="active" onclick="changeRoom('room1');">Room 1</button>
+            <button id="room2" onclick="changeRoom('room2');">Room 2</button>
+            <button id="room3" onclick="changeRoom('room3');">Room 3</button>
+        </div>
+        <div>
+            Select a color, then click on the canvas to draw a rectangle.
+            <input type="color" id="color_picker">
+        </div>
+    </body>
+</html>

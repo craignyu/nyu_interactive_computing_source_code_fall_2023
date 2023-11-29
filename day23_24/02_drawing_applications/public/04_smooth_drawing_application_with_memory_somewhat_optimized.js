@@ -120,6 +120,7 @@ function mouseDragged() {
     }
     
     // draw an ellipse here
+    fill(currentColor);
     ellipse(int(mouseX), int(mouseY), 20, 20);
 
     // store this ellipse in our messageArray

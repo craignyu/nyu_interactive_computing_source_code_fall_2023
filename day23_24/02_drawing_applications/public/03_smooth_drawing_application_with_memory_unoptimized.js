@@ -68,6 +68,7 @@ function mousePressed() {
 function mouseDragged() {
     
     // draw an ellipse here
+    fill(currentColor);
     ellipse(mouseX, mouseY, 20, 20);
 
     // emit a message to other clients to draw an ellipse here

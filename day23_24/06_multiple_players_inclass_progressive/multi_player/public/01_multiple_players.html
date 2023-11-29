@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>01_multiple_players</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script src="01_multiple_players.js"></script>
+
+        <style>
+            .active {
+                background-color: yellow;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>01_multiple_players</h1>
+        <div>
+            Select a color for your avatar.
+            <input type="color" id="color_picker" onchange="changeColor();">
+        </div>
+    </body>
+</html>

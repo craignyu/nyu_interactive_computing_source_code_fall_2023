@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>02_rooms_with_join_code</title>
+
+        <!-- load in the p5 core library -->
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <!-- your custom sketch code -->
+        <script src="02_rooms_with_join_code.js"></script>
+
+        <style>
+            .hidden {
+                display: none;
+            }
+            .alert {
+                background-color: #f00;
+                color: #fff;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>02_rooms_with_join_code</h1>
+        <div>
+            Enter a Join Code: <input type="text" id="join_code">
+            <button id="join_room" onclick="joinRoom();">Join Room</button>
+        </div>
+        <div id="join_failed" class="alert hidden">Room does not exist</div>
+        <div id="game_div" class="hidden">
+            Select a color, then click on the canvas to draw a rectangle.
+            <input type="color" id="color_picker"><br>
+        </div>
+    </body>
+</html>

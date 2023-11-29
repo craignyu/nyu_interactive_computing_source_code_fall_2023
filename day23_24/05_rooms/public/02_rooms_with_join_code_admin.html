@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><!DOCTYPE html>
+<html>
+    <head>
+        <title>02_rooms_with_join_code_admin</title>
+
+        <!-- socket.io client library -->
+        <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+        <style>
+            .room_div {
+                display: inline-block;
+                height: 50px;
+                padding: 5px;
+                text-align: center;
+                background-color: #ccc;
+                border-radius: 3px 3px 3px 3px;
+                margin: 5px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>02_rooms_with_join_code_admin</h1>
+        
+        <div>
+            <button id="create_room">Create a new Room</button>
+        </div>
+        <h2>Existing Rooms:</h2>
+        <div id="existing_rooms"></div>
+
+        <script>
+            window.addEventListener('load', function() {
+                socket = io();
+
+                socket.on('admin_create_room', function(message) {
+                    let div = document.createElement('div');
+                    div.classList.add('room_div');
+                    div.innerText = message.id;
+                    console.log(div);
+                    document.getElementById('existing_rooms').appendChild(div);
+                });
+
+                document.querySelector('#create_room').onclick = function() {
+                    socket.emit('admin_create_room', {});
+                }
+
+            });
+        </script>
+    </body>
+</html>
