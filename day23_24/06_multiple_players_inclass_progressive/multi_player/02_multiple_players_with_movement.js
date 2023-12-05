@@ -77,7 +77,6 @@ io.on('connection', function(socket) {
     // listen for player movement messages
     socket.on('player_moved', function(msg) {
 
-        console.log(myId, allPlayers[myId]);
         if (myId && allPlayers[myId] && msg.x && msg.y) {
 
             // update this player's position
